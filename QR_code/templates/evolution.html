@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static "css/student1.css" %}">
+    <title>QR_Code</title>
+</head>
+<body>
+<div class="wrapper">
+        <!--Top menu -->
+        <div class="sidebar">
+           <!--profile image & text-->
+            <!--menu item-->
+
+<h3><a href="{% static 'images/chem.pdf' %}" style="color: white;" target="Answer">Student_1</a></h3> 
+<h3><a href="{% static 'images/civil.pdf' %}" style="color: white;" target="Answer">Student_2</a></h3>
+<h3><a href="{% static 'images/static.pdf' %}" style="color: white;" target="Answer">Student_3</a></h3>
+<h3><a href="{% url 'logout' %}" style="color: white;">Logout</a></h3>
+  
+</div>
+</div>
+
+<div>    
+<div class="projects-wrapper">
+<div class="proj-box-format">
+<iframe id="scaled-frame" name="Answer" ></iframe>
+<form method="post" action="/studentdata/">
+    {% csrf_token %}
+<input type="text" id="username" name="username" placeholder="Name" required><i class="validation"><span></span><span></span></i>
+<input type="text" id="username" name="marks" placeholder="marks " required><i class="validation"><span></span><span></span></i><br><br>
+<input type="submit" name="submit" style="background:#04AA6D ; border: none;color: white;padding: 16px 22px;
+  text-decoration: none; margin-left: 60%; cursor: pointer;">
+</form>
+     </div>
+    
+<div class="proj-box-format">
+<iframe src="{% static 'images/137DV122019.pdf'%}" name="abc"></iframe>
+<button type="button" class="btn btn-primary" style="margin-top: 25px;background:#7AD7F0 ; border: none;color: white;padding: 16px 22px;
+  text-decoration: none;"> <a href="{% static 'images/static.pdf'%}" target="abc" >Answer key</a></button>
+
+<button type="button" class="btn btn-primary"style="margin-top: 25px;margin-top: 25px;background:#7eafac ; border: none;color: white;padding: 16px 22px;
+  text-decoration: none;"> 
+<a href="{% static 'images/137DV122019.pdf' %}" target="abc">Question paper</a></button>
+
+    </div>
+</div>
+</body>
+</html>
